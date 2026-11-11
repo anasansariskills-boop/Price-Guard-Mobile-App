@@ -1,0 +1,6 @@
+{
+  "name": "PriceGuard",
+  "description": "AI-powered supplier invoice auditing for restaurants, hotels, and hospitality groups to catch price discrepancies and overcharges.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

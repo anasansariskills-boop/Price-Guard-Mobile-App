@@ -1,0 +1,76 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 1111 >>
+stream
+BT
+/F1 10 Tf
+20 750 Td
+14 TL
+(TAX INVOICE) Tj
+T*
+(============================================================) Tj
+T*
+(Pacific Coast Pantry & Produce) Tj
+T*
+(Invoice Number: INV-90422) Tj
+T*
+(Invoice Date: 2026-10-22) Tj
+T*
+(Currency: USD) Tj
+T*
+(------------------------------------------------------------) Tj
+T*
+(Item Code | Description | Qty | Unit | Unit Price | Total) Tj
+T*
+(OIL-012 | EVOO 4X5L CASE IMPORT | 20 | CASE | 84.00 | 1680.00) Tj
+T*
+(DAIRY-030 | MOZZARELLA WHOLE MILK BLK 2KG | 35 | BLOCK | 12.00 | 420.00) Tj
+T*
+(PROD-091 | SAN MARZANO #10 TINS CASE | 15 | CASE | 42.00 | 630.00) Tj
+T*
+(SPEC-999 | ORGANIC AGAVE NECTAR 1L | 6 | EA | 14.00 | 84.00) Tj
+T*
+(OIL-011 | CANOLA FRYING OIL 16L JIB | 8 | CASE | 38.00 | 304.00) Tj
+T*
+(SPEC-010 | WHITE TRUFFLE OIL 250ML | 10 | EA | 22.50 | 225.00) Tj
+T*
+(------------------------------------------------------------) Tj
+T*
+(SUBTOTAL: $3343.00) Tj
+T*
+(TAX \(0.0%\): sh.00) Tj
+T*
+(INVOICE TOTAL DUE: $3343.00) Tj
+T*
+(============================================================) Tj
+T*
+(Payment terms: Net 30 days. Remit to billing department.) Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000262 00000 n 
+0000000000 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1411
+%%EOF

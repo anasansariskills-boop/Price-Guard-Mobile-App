@@ -1,0 +1,1377 @@
+# MASTER BUILD PROMPT: PriceGuard
+## Build a Production-Quality, Working AI Supplier Invoice Audit Demo
+
+You are acting as a senior full-stack engineer, product designer, UX specialist, SaaS architect, and conversion-focused B2B marketing strategist.
+
+Your task is to design and build **PriceGuard**, a beautiful, professional, functional web application for hotels, restaurants, and hospitality groups.
+
+PriceGuard is an AI-powered supplier invoice auditing platform that helps businesses identify potential supplier overcharges by comparing invoices against negotiated price lists and supplier agreements.
+
+This is not a conceptual prototype, a static landing page, or a fake dashboard.
+
+**Build a genuinely working, deployable product demo with functional document processing, AI-assisted extraction, accurate price comparisons, evidence-backed findings, and useful downloadable reports.**
+
+At the same time, the public-facing website must be exceptionally well designed and persuasive enough that a nontechnical restaurant owner, hotel manager, procurement director, or finance professional can immediately understand the problem, recognize its financial implications, and feel motivated to try the product.
+
+The ultimate goal is to use this demo to approach real hotels and restaurant groups, validate demand, collect qualified leads, and convert interested prospects into pilot customers.
+
+---
+
+# PART 1: Understand the Business Before Writing Code
+
+## 1.1 The business problem
+
+Hotels and restaurants purchase large quantities of products from suppliers.
+
+These may include:
+
+- Meat, seafood, vegetables, dairy, and other ingredients
+- Cooking oil and beverages
+- Cleaning chemicals and consumables
+- Housekeeping supplies
+- Linen and toiletries
+- Packaging and other operating supplies
+
+Businesses often negotiate prices with suppliers in advance.
+
+However, the prices appearing on later invoices may differ from those agreed.
+
+Examples:
+
+- A supplier charges $4.50/kg instead of the agreed $4.00/kg.
+- A product's price increases without the business noticing.
+- An invoice contains a duplicate line.
+- A supplier bills for a different pack size.
+- A promotional or previously agreed price is not reflected.
+- Different branches are charged different rates for the same product.
+
+Not every difference is an actual overcharge. Some may reflect legitimate changes, taxes, substitutions, or updated agreements.
+
+The problem is that identifying which differences require attention can take considerable manual effort.
+
+For a restaurant or hotel group processing hundreds of invoice lines, small discrepancies may accumulate.
+
+Existing restaurant management and accounting systems often automate invoice entry and track purchasing costs. Some also provide contract-price checking.
+
+PriceGuard must therefore position itself as a **focused, independent supplier invoice auditing tool**, not falsely claim that competing products lack invoice verification.
+
+## 1.2 Our solution
+
+PriceGuard allows businesses to:
+
+1. Upload agreed supplier price lists.
+2. Upload supplier invoices.
+3. Automatically extract invoice and product information.
+4. Match invoice items with the corresponding agreed products.
+5. Compare prices using accurate calculation rules.
+6. Identify potential discrepancies.
+7. See how much each discrepancy may represent.
+8. Review supporting evidence from the original documents.
+9. Download a professional audit report.
+10. Prepare a supplier correction request for confirmed discrepancies.
+
+The promise is simple:
+
+**Know when your supplier invoices don't match the prices you agreed to.**
+
+## 1.3 Target users
+
+Primary:
+
+- Independent restaurant groups with multiple locations
+- Hotel groups
+- Hospitality management companies
+- Restaurant finance managers
+- Procurement managers
+- Food and beverage directors
+
+Secondary:
+
+- Individual restaurants with substantial purchasing volume
+- Catering companies
+- Foodservice operators
+- Small hospitality chains
+
+The application must work equally well for restaurants and hotels.
+
+Do not build two separate products.
+
+Use one product with hospitality-specific examples and terminology.
+
+---
+
+# PART 2: Design Philosophy
+
+This is one of the most important sections of the entire project.
+
+The website must not look like a generic AI-generated SaaS product.
+
+It must feel like a real company hired an experienced branding agency, senior product designer, and professional frontend engineering team.
+
+## 2.1 Strict design restrictions
+
+Avoid all common AI-generated website patterns.
+
+Specifically:
+
+- Absolutely no em dashes anywhere in website content.
+- No generic purple or blue AI gradients.
+- No floating glowing orbs.
+- No meaningless decorative blobs.
+- No excessive glassmorphism.
+- No overuse of rounded cards.
+- No unnecessary colored pills or badges.
+- No generic three-column feature-card grid repeated throughout the landing page.
+- No random Lucide icons simply to fill visual space.
+- No excessive shadows or artificial glowing effects.
+- No generic animated statistics with fabricated claims.
+- No fake testimonials.
+- No fake company logos.
+- No fake customer counts.
+- No invented savings percentages.
+- No generic AI illustrations featuring robots or brains.
+- No excessive use of words such as revolutionary, cutting-edge, game-changing, supercharge, leverage, or transformative.
+- No fragmented, robotic marketing copy.
+- No endless collection of tiny headings followed by repetitive descriptions.
+- No generic dashboard screenshots that do not match the actual product.
+- No unnecessary technical terminology on public-facing pages.
+- No copy that sounds like it was written by a language model.
+
+Also avoid excessive punctuation gimmicks, decorative arrows, and overly stylized headings.
+
+Prefer natural, polished copy written for actual hospitality professionals.
+
+## 2.2 Color palette
+
+Use a warm, trustworthy, elegant, premium color palette.
+
+Suggested visual direction:
+
+| Purpose | Color | Hex |
+|---|---|---|
+| Background | Warm ivory | #F8F7F3 |
+| Primary text | Deep charcoal | #202923 |
+| Primary brand | Forest green | #214B3D |
+| Secondary background | Pale sage | #E7EDE5 |
+| Accent | Muted copper | #BE825B |
+| Card background | Soft white | #FFFFFF |
+| Borders | Warm gray | #E1E3DD |
+| Error indicators | Muted brick red | #A7443E |
+
+These are starting suggestions, not mandatory constraints if a more cohesive palette is found.
+
+Important:
+
+- The design should feel comfortable and easy on the eyes.
+- Avoid overly saturated colors.
+- Ensure accessible contrast.
+- Use red only for meaningful discrepancies and errors.
+- Use green primarily for brand identity, successful outcomes, and primary actions.
+- Do not use the accent color everywhere.
+- Keep the experience visually quiet and organized.
+
+The overall impression should communicate financial confidence, clarity, hospitality, and professionalism.
+
+## 2.3 Typography
+
+Use professional, readable typography.
+
+Suggested pairing:
+
+- Headings: Manrope or Plus Jakarta Sans
+- Body: Inter or DM Sans
+
+Use only one or two font families.
+
+Headings should have confident weight and carefully controlled line lengths.
+
+Body text should remain comfortably readable.
+
+Avoid ultra-thin fonts, oversized text everywhere, and exaggerated letter spacing.
+
+## 2.4 Visual composition
+
+Create an editorial, carefully art-directed layout.
+
+Prioritize:
+
+- Strong visual hierarchy
+- Natural whitespace
+- Clear content grouping
+- Subtle border treatments
+- Well-proportioned illustrations
+- Thoughtful typography
+- Authentic product imagery
+- Carefully composed interactive product previews
+- Clean navigation
+- Consistent spacing
+- Excellent responsive behavior
+
+Use actual interface components from the working app when demonstrating the product.
+
+Avoid relying on generic stock photography throughout the landing page.
+
+Where imagery is appropriate, use genuine hospitality-related photographs or thoughtfully designed illustrations.
+
+## 2.5 Animations
+
+Animations should improve comprehension rather than merely make the website move.
+
+Preferred examples:
+
+- A supplier invoice appearing beside an agreed price list.
+- A specific price difference being highlighted.
+- An invoice line connecting to its corresponding agreed product.
+- A potential overcharge total being calculated.
+- A subtle transition from document upload to completed audit.
+- Smooth, understated section reveals.
+- Gentle button and navigation interactions.
+
+Animation principles:
+
+- Smooth and restrained
+- Comfortable pacing
+- Consistent easing
+- No rapid flashing
+- No excessive parallax
+- No scroll hijacking
+- Support reduced-motion preferences
+- Maintain performance on mobile
+
+The product demonstration animation should show an understandable business workflow, not a technically impressive but confusing interface.
+
+---
+
+# PART 3: Landing Page Content and Conversion Strategy
+
+The landing page is not simply a place to display product features.
+
+Its job is to make a real business owner think:
+
+**"This could be happening in my business. I want to check."**
+
+The page should follow this storytelling structure:
+
+Problem → Financial consequence → Simple solution → Visible proof → Trust → Action.
+
+## 3.1 Navigation
+
+Keep navigation minimal.
+
+Suggested structure:
+
+- PriceGuard logo
+- How It Works
+- What It Finds
+- Who It's For
+- FAQ
+- Sign In
+- Primary CTA
+
+The main CTA should remain visually prominent.
+
+Recommended navigation CTA:
+
+**Check Your Invoices**
+
+On mobile, use a clean, easy-to-operate menu.
+
+## 3.2 Hero section
+
+This is the most important visual and copywriting section.
+
+### Hero headline
+
+**Are your suppliers charging you more than you agreed?**
+
+Make this the main headline.
+
+It should immediately resonate with hospitality procurement teams, restaurant owners, and finance managers.
+
+### Supporting copy
+
+"Small differences in supplier invoices can add up across your restaurant or hotel. PriceGuard checks your invoices against agreed prices and shows you where something doesn't match, so you can review potential overcharges before they go unnoticed."
+
+Feel free to improve the copy while preserving its directness and clarity.
+
+### Primary CTA
+
+**Check My Supplier Invoices**
+
+This CTA should lead into the actual product experience, not a dead-end form.
+
+### Secondary CTA
+
+**See How It Works**
+
+This should launch or scroll to a short interactive sample audit.
+
+### Trust microcopy
+
+"Try a sample audit first. No accounting integration required."
+
+Only claim no signup or no credit card if that matches the implemented behavior.
+
+### Hero visual
+
+Do not use a generic dashboard screenshot.
+
+Instead, create a beautiful, custom-built interactive visual demonstrating a real example.
+
+Left:
+
+Agreed price list:
+- Chicken breast: $4.00/kg
+- Cooking oil: $18.00/case
+- Mozzarella: $6.00/kg
+
+Right:
+
+Supplier invoice:
+- Chicken breast: $4.50/kg
+- Cooking oil: $21.00/case
+- Mozzarella: $6.00/kg
+
+Then visually reveal the differences.
+
+Show a clear result:
+
+"Potential overcharges found: $300"
+
+Use a consistent quantity-based example.
+
+The animation should be slow enough to understand, with realistic documents rather than generic floating UI components.
+
+The visitor should instantly recognize what is being compared and why it matters.
+
+## 3.3 Problem section
+
+Suggested section headline:
+
+**Your suppliers send the invoices. But who's checking the prices?**
+
+Explain the issue in natural language.
+
+Example copy:
+
+"Every invoice contains dozens of prices, quantities, and product descriptions. Checking them against supplier agreements takes time, especially when you're managing several locations. Even small differences can go unnoticed when your team is busy keeping the business running."
+
+Use a well-designed visual showing the complexity of reviewing multiple supplier invoices.
+
+Avoid making unsupported claims about average savings or industry-wide error rates.
+
+## 3.4 Cost illustration
+
+Create an interactive calculator.
+
+Headline:
+
+**Small price differences can become expensive.**
+
+Let users adjust:
+
+- Monthly supplier spend
+- Illustrative percentage of potential overcharges
+
+Calculate the hypothetical annual exposure.
+
+Example:
+
+Monthly supplier spending: $50,000
+
+Illustrative overcharge rate: 1%
+
+Potential annual exposure: $6,000
+
+Clearly label all outputs as hypothetical.
+
+Do not imply that every business loses this amount.
+
+Suggested explanatory note:
+
+"This is an illustration, not an estimate of your actual overcharges. An invoice audit is needed to identify real discrepancies."
+
+This section should make financial consequences tangible without fear-based exaggeration.
+
+## 3.5 Solution section
+
+Headline:
+
+**Know exactly which invoices need a second look.**
+
+Explain how PriceGuard simplifies the review process.
+
+Use three natural stages:
+
+**Upload your supplier prices**
+
+Add the agreed price list or supplier agreement you already use.
+
+**Add your invoices**
+
+PriceGuard reads the invoice details and matches the products to your price list.
+
+**Review the differences**
+
+See possible overcharges, inspect the original documents, and download a clear report.
+
+Use one cohesive visual workflow instead of three generic cards.
+
+## 3.6 Interactive product demonstration
+
+This section is critical.
+
+Headline:
+
+**See what PriceGuard catches.**
+
+Include a functional sample audit directly accessible from the landing page.
+
+Visitors should be able to click a sample invoice and explore:
+
+- Original agreed prices
+- Actual invoiced prices
+- Flagged discrepancies
+- Quantities
+- Calculated differences
+- Evidence references
+- A proposed supplier correction request
+
+Provide two examples:
+
+**Restaurant example**
+
+Food and beverage invoices.
+
+**Hotel example**
+
+Food, housekeeping, and guest-supply invoices.
+
+The data must be clearly identified as sample data.
+
+This is a major conversion opportunity.
+
+After the visitor experiences the sample, display a CTA:
+
+**Ready to check your own invoices?**
+
+Button:
+
+**Start My Invoice Check**
+
+## 3.7 What the product detects
+
+Headline:
+
+**More than just an invoice scanner.**
+
+Explain the problems using simple language.
+
+Include:
+
+**Unexpected price increases**
+
+A supplier charges a higher price than the applicable agreed rate.
+
+**Possible duplicate charges**
+
+The same charge or invoice may have been entered more than once.
+
+**Incorrect pack sizes**
+
+A supplier bills a case, carton, or unit in a way that may not match the agreed product.
+
+**Prices that differ between locations**
+
+The same agreed product may be billed differently across hotel or restaurant branches.
+
+Only advertise a feature as functional if it is actually implemented.
+
+If a feature is not included in this release, omit it from the active feature list or describe it clearly as planned.
+
+Do not advertise automatic detection of discounts, rebates, substitutions, or contract amendments unless those capabilities are supported by tested logic.
+
+## 3.8 Who it's for
+
+Explain two audiences without duplicating the entire page.
+
+**For Restaurants**
+
+"Keep a closer eye on ingredient costs and supplier pricing across your locations."
+
+**For Hotels**
+
+"Review food, beverage, housekeeping, and operating-supply invoices in one place."
+
+Use subtle hospitality-specific imagery and examples.
+
+Avoid creating different applications for each audience.
+
+## 3.9 Trust and privacy section
+
+Headline:
+
+**Your invoices stay under your control.**
+
+Explain honestly:
+
+- Users choose which documents to upload.
+- The demo does not require banking access.
+- The demo does not initiate payments.
+- The system displays the evidence behind discrepancies.
+- Users review findings before acting.
+- Files are protected using authenticated access and private storage.
+- Uploaded data is not displayed publicly.
+- Users can delete their audit data.
+
+Implement these protections before making the corresponding claims.
+
+Do not claim certifications such as SOC 2, ISO 27001, HIPAA, or GDPR compliance unless independently established.
+
+Do not claim that no third party ever processes document content if an external AI or OCR provider is used.
+
+## 3.10 Signup and lead conversion
+
+Make conversion simple and low friction.
+
+Primary conversion:
+
+**Check My Supplier Invoices**
+
+The visitor should be able to create an account and start an audit.
+
+Secondary conversion:
+
+**Request a Free Sample Audit**
+
+Provide a short form:
+
+- Name
+- Work email
+- Business name
+- Business type: Restaurant, Hotel, Catering, Other
+- Number of locations
+- Optional message
+
+Do not ask for excessive information.
+
+Clearly distinguish between self-service product access and a GTEX-assisted audit request.
+
+Use a real backend to store leads, with the possibility of email notifications.
+
+Do not use fake success screens that discard the submission.
+
+Include basic abuse protection, validation, and consent/privacy notice.
+
+## 3.11 FAQ
+
+Address real business concerns:
+
+- What documents do I need?
+- Can I use this if my invoices are PDFs or scanned images?
+- Does PriceGuard connect to my accounting software?
+- Does it automatically contact my suppliers?
+- What if supplier prices change?
+- How accurate are the results?
+- Are my documents private?
+- Can I try it before purchasing?
+- What happens if the AI cannot match an item?
+
+Answers should be precise and consistent with actual functionality.
+
+## 3.12 Final CTA
+
+End with a strong, calm, convincing call to action.
+
+Headline:
+
+**You negotiated the prices. Make sure your invoices reflect them.**
+
+Supporting copy:
+
+"See where your supplier invoices may not match your agreements. Start with a sample audit and decide what deserves a closer look."
+
+Primary CTA:
+
+**Check My Supplier Invoices**
+
+Secondary CTA:
+
+**Explore a Sample Audit**
+
+The footer should contain real links to Privacy Policy, Terms, and contact information.
+
+Do not invent a company address or customer support details.
+
+---
+
+# PART 4: Working Product Requirements
+
+Build a real application behind the landing page.
+
+## 4.1 Authentication
+
+Support secure email-based authentication.
+
+Use an established authentication provider or library.
+
+For the demo, prefer Google sign-in or email magic links.
+
+Do not build custom password storage.
+
+Include:
+
+- Account creation
+- Sign-in
+- Logout
+- Protected dashboard
+- Per-user audit isolation
+- Secure session handling
+
+The public sample audit should remain accessible without authentication.
+
+## 4.2 Dashboard
+
+The dashboard should be welcoming, uncluttered, and focused.
+
+Primary action:
+
+**New Invoice Audit**
+
+Show:
+
+- Previous audits
+- Audit date
+- Supplier
+- Number of invoices checked
+- Potential discrepancies
+- Potential overcharge amount
+- Processing status
+
+Avoid overwhelming users with charts before they have completed an audit.
+
+Use helpful empty states.
+
+Example:
+
+"You haven't checked any invoices yet. Upload your first supplier price list and invoice to get started."
+
+## 4.3 Create a new audit
+
+Build a simple guided workflow.
+
+**Step 1: Add agreed prices**
+
+Support CSV and Excel price lists.
+
+Also support PDF supplier price agreements where parsing is feasible.
+
+**Step 2: Upload invoices**
+
+Support:
+
+- PDF
+- JPG
+- PNG
+
+Use sensible file size and page limits suitable for a public demo.
+
+Show these limits before upload.
+
+**Step 3: Review extracted information**
+
+Allow corrections before calculations.
+
+**Step 4: Compare**
+
+Run the matching and price validation logic.
+
+**Step 5: Review results**
+
+Present a clear audit summary and itemized discrepancies.
+
+Do not force users through unnecessary steps.
+
+## 4.4 Actual document extraction
+
+Implement a real extraction pipeline.
+
+For text-based PDFs:
+
+- Extract embedded text and layout information.
+- Avoid unnecessary OCR when the text is already available.
+
+For scanned PDFs and images:
+
+- Use an appropriate OCR or vision-based extraction provider.
+
+Extract:
+
+- Supplier name
+- Invoice number
+- Invoice date
+- Currency
+- Item description
+- Supplier product code, if present
+- Quantity
+- Unit of measure
+- Pack size, if present
+- Unit price
+- Line total
+- Tax information, where clearly identifiable
+- Total invoice amount
+
+Return structured data with proper validation.
+
+Do not invent missing fields.
+
+If extraction confidence is low, mark the field for review.
+
+Use typed schemas and validate all AI outputs.
+
+Do not store API keys in frontend code.
+
+## 4.5 Supplier price-list extraction
+
+Support importing:
+
+- CSV
+- XLSX
+- Machine-readable PDF
+- Scanned PDF, through OCR when supported
+
+Extract:
+
+- Supplier
+- Product name
+- SKU or product identifier
+- Agreed price
+- Currency
+- Unit
+- Pack size
+- Effective date
+- Expiration date, if present
+
+If an agreement contains complicated conditions, do not silently guess the applicable rate.
+
+Require user review where necessary.
+
+## 4.6 Product matching engine
+
+This is one of the most important technical parts.
+
+Supplier descriptions may differ between price lists and invoices.
+
+Example:
+
+Price list: "Boneless Chicken Breast 1 KG"
+
+Invoice: "CHKN BRST B/L KG"
+
+The system should suggest that these refer to the same product.
+
+Use a hybrid approach:
+
+1. Exact SKU matching where available.
+2. Normalized text matching.
+3. Fuzzy matching.
+4. AI-assisted semantic matching for ambiguous items.
+5. Human confirmation where confidence is insufficient.
+
+Never automatically treat all semantically similar items as identical.
+
+Pack sizes, brands, specifications, and units may make two items materially different.
+
+Store confirmed product mappings so they can be reused in future audits.
+
+## 4.7 Accurate pricing comparison
+
+All financial calculations must be deterministic.
+
+Do not use an LLM to perform the arithmetic.
+
+Use decimal-safe numerical types.
+
+Example:
+
+Agreed price: $4.00/kg
+
+Invoice price: $4.50/kg
+
+Quantity: 600 kg
+
+Potential overcharge:
+
+(4.50 - 4.00) × 600 = $300
+
+Only perform comparisons when:
+
+- Product identity is sufficiently verified.
+- Units are compatible.
+- Pack conversion is known.
+- Applicable price dates are known.
+- Currencies match or an explicitly supported conversion is available.
+- The relevant price agreement is valid.
+
+For unclear cases, show:
+
+**Needs review**
+
+Never present an uncertain discrepancy as a confirmed financial loss.
+
+## 4.8 Discrepancy types
+
+Implement the following for the MVP:
+
+**Confirmed price mismatch**
+
+The matched invoice unit price exceeds the applicable agreed price.
+
+Use the term confirmed only when the matching and relevant terms have been verified.
+
+**Potential product mismatch**
+
+The system identifies an item that may correspond to a price-list product but needs confirmation.
+
+**Unit or pack-size discrepancy**
+
+The item appears to use incompatible or unclear quantities.
+
+**Possible duplicate invoice**
+
+An invoice appears to have the same supplier, invoice number, date, or other identifying information as another processed invoice.
+
+**Unmatched product**
+
+The invoice contains an item that cannot be confidently linked to the agreed price list.
+
+The user must be able to resolve or dismiss findings.
+
+## 4.9 Audit report
+
+After processing, show:
+
+- Supplier name
+- Date range
+- Invoices processed
+- Total invoice amount
+- Number of successfully matched lines
+- Lines needing review
+- Number of potential price discrepancies
+- Total potential overcharge
+- Breakdown by supplier
+- Breakdown by product
+- Original evidence references
+
+Distinguish clearly between:
+
+- Potential discrepancies
+- Reviewed discrepancies
+- Confirmed discrepancies
+- Confirmed recoveries, if manually recorded
+
+Do not label potential overcharges as recovered money.
+
+## 4.10 Evidence-based review
+
+Every flagged discrepancy should explain:
+
+- Which invoice was checked.
+- Which invoice line caused the alert.
+- Which agreed-price record was used.
+- What each document says.
+- How the comparison was calculated.
+- Whether any information is uncertain.
+
+Provide access to original uploaded documents.
+
+Where technically possible, display or highlight the relevant source text or page.
+
+When exact source highlighting is unavailable, show document name, page number, and extracted line reference.
+
+Do not fabricate source coordinates.
+
+## 4.11 Supplier correction request
+
+For reviewed discrepancies, provide:
+
+**Generate Supplier Email**
+
+Create a polite, professional draft requesting clarification or correction.
+
+Include:
+
+- Invoice number
+- Product
+- Agreed rate
+- Charged rate
+- Quantity
+- Calculated difference
+
+Example:
+
+"Hello, we noticed that invoice INV-1042 lists chicken breast at $4.50 per kg, while our agreed price list shows $4.00 per kg for the applicable period. Could you please review this difference and confirm whether a correction or credit is required?"
+
+The draft should remain editable.
+
+Do not automatically email suppliers.
+
+## 4.12 Export functionality
+
+Support:
+
+- CSV audit export
+- Professionally formatted PDF report
+
+The report must contain actual audit data.
+
+No placeholder exports.
+
+---
+
+# PART 5: Public Sample Audit
+
+A public interactive sample is essential for customer acquisition.
+
+Many business visitors will not want to upload confidential invoices before understanding or trusting the product.
+
+Provide a sample audit accessible directly from the landing page without signup.
+
+Create two realistic fictional datasets.
+
+### Sample A: Restaurant
+
+Include:
+
+- 2 suppliers
+- 2 agreed price lists
+- 3–5 invoices
+- 15–30 invoice line items
+- Several correctly matched prices
+- A few potential overcharges
+- One uncertain item match
+- One pack-size discrepancy
+
+### Sample B: Hotel
+
+Include:
+
+- Food supplier
+- Housekeeping supplier
+- Sample price agreements
+- 3–5 invoices
+- A few realistic pricing discrepancies
+- One duplicate invoice scenario
+
+All sample figures must be internally consistent.
+
+Generate actual sample PDF invoices and CSV/Excel price lists.
+
+The sample audit should use the same data structures and comparison engine as real uploads.
+
+Precompute sample extraction results if needed to avoid public demo API costs, but do not simulate the actual comparison logic.
+
+Clearly label all datasets:
+
+"Illustrative sample data."
+
+Do not fabricate customer results or imply that the sample documents came from real hotels or restaurants.
+
+---
+
+# PART 6: Technical Architecture
+
+Use a maintainable, straightforward architecture suitable for a small team.
+
+Preferred stack:
+
+Frontend:
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Accessible component primitives
+- Framer Motion or Motion for carefully controlled animation
+
+Backend:
+- Python FastAPI
+
+Database:
+- PostgreSQL
+
+File storage:
+- Private object storage such as S3-compatible storage
+
+Authentication:
+- Established authentication library or provider
+
+Document processing:
+- PyMuPDF or equivalent for machine-readable PDF extraction
+- Reliable spreadsheet parsing
+- OCR/vision processing for scans
+
+AI:
+- Configurable model provider
+- Structured JSON extraction
+- Semantic item matching when required
+
+Database records should include:
+
+- Users
+- Organizations
+- Suppliers
+- Price lists
+- Agreed-price records
+- Invoices
+- Invoice line items
+- Product mappings
+- Audits
+- Audit findings
+- Review decisions
+- Audit exports
+- Leads and pilot requests
+
+Keep organizational data isolated.
+
+Avoid unnecessarily complex microservices, event buses, or infrastructure.
+
+Use asynchronous processing or background jobs where needed for document analysis.
+
+Never process large document workloads in a frontend request.
+
+## Data security
+
+Implement:
+
+- Server-side file validation
+- File size and page limits
+- Private storage buckets
+- Authenticated file access
+- Organization-level authorization
+- Rate limiting
+- Secure signed file URLs where appropriate
+- Protection against malicious file uploads
+- Safe handling of AI prompt injection inside documents
+- Logging without sensitive document contents
+- Document deletion
+- Reasonable data retention controls
+- No public exposure of uploaded invoices
+
+Treat uploaded invoice contents as untrusted data.
+
+Never execute instructions embedded inside documents.
+
+---
+
+# PART 7: User Experience Requirements
+
+The product should feel easy even for someone unfamiliar with AI.
+
+Use language such as:
+
+"Agreed price"
+
+"Charged price"
+
+"Possible overcharge"
+
+"Needs review"
+
+"Check the original invoice"
+
+"Download audit"
+
+Avoid technical language such as:
+
+"Vector embeddings"
+
+"Semantic similarity threshold"
+
+"LLM confidence"
+
+"Entity resolution pipeline"
+
+"Anomaly classifier"
+
+Those concepts may exist internally but should not burden users.
+
+Every important result should be understandable without reading documentation.
+
+## Loading and error states
+
+Implement useful feedback:
+
+- Uploading document
+- Reading invoice
+- Matching products
+- Comparing prices
+- Preparing report
+- Audit complete
+- Requires user review
+- Processing failed
+
+Never fake completed processing.
+
+If a model API is unavailable, show an understandable failure message.
+
+Do not secretly substitute fabricated invoice information.
+
+## Responsive design
+
+The landing page must look excellent on:
+
+- Desktop
+- Laptop
+- Tablet
+- Mobile
+
+The dashboard should remain usable on mobile, though complex audit tables may use thoughtfully designed responsive layouts.
+
+Avoid horizontal overflow and tiny unreadable content.
+
+---
+
+# PART 8: Scope Control
+
+This is intended to be a lean, working product demo, not a six-month enterprise build.
+
+Prioritize a complete vertical slice.
+
+### Must have
+
+- Premium landing page
+- Persuasive, nontechnical copy
+- Functional CTAs
+- Working public sample audit
+- User signup
+- Secure dashboard
+- Real invoice upload
+- Real price-list upload
+- Working extraction
+- Matching and review
+- Accurate discrepancy calculations
+- Evidence-backed results
+- CSV/PDF exports
+- Supplier correction email draft
+- Lead capture
+
+### Can wait
+
+- POS integrations
+- QuickBooks integration
+- Xero integration
+- Supplier portal connections
+- Automatic email ingestion
+- Automatic supplier disputes
+- Payment blocking
+- Multi-step approval systems
+- Complex contract rebate calculations
+- Enterprise procurement workflows
+- Advanced multi-currency processing
+- Complete inventory management
+- Subscription billing
+- Complex usage-based pricing
+- Extensive organization administration
+
+Do not spend significant time building features that are not required to demonstrate the core business value.
+
+If implementation complexity becomes an issue, preserve working invoice extraction, reliable comparisons, evidence, and the public sample audit before adding optional features.
+
+---
+
+# PART 9: Testing and Reliability
+
+Implement automated tests for:
+
+- CSV price-list parsing
+- Excel price-list parsing
+- PDF invoice extraction using sample fixtures
+- Exact product matching
+- Fuzzy matching fallback
+- Unit conversions
+- Decimal-safe price calculations
+- Agreement effective dates
+- Duplicate invoice detection
+- Handling unmatched products
+- Handling ambiguous pack sizes
+- Missing-price behavior
+- Unsupported documents
+- Malformed AI output
+- Cross-user data isolation
+- PDF and CSV export generation
+
+Test that a real user can complete the full workflow:
+
+Visit landing page → Explore sample audit → Sign up → Upload documents → Review extraction → Run audit → Inspect discrepancy → Download report.
+
+Do not consider a feature complete merely because its interface exists.
+
+---
+
+# PART 10: Deployment Requirements
+
+The application must be deployable and publicly accessible.
+
+Recommended deployment:
+
+- Frontend on Vercel
+- Backend on Railway or equivalent
+- Managed PostgreSQL
+- Private object storage
+
+Include:
+
+- Environment variable template
+- Setup instructions
+- Database migrations
+- Local development commands
+- Production build instructions
+- Backend deployment instructions
+- Sample dataset generation
+- Health-check endpoint
+- Graceful handling of missing API keys
+- Basic error monitoring
+- Mobile and browser testing
+
+Never commit secrets.
+
+Use environment variables for all external provider credentials.
+
+Provide an honest list of external services requiring configuration.
+
+---
+
+# PART 11: Implementation Process
+
+Work in focused stages.
+
+### Stage 1: Architecture and design direction
+
+Inspect the existing repository first.
+
+Identify what already exists and what needs to be implemented.
+
+Create a concise implementation plan, component structure, database schema, and design direction.
+
+Do not overwrite useful existing code unnecessarily.
+
+### Stage 2: Landing page and sample experience
+
+Build the public-facing website with its distinctive visual design, persuasive copy, responsive layouts, and accessible sample audit.
+
+Make sure the sample audit genuinely uses the application's comparison logic.
+
+### Stage 3: Core audit engine
+
+Implement document extraction, structured data storage, matching, price comparison, and review logic.
+
+### Stage 4: Authenticated product workflow
+
+Implement authentication, uploads, dashboard, audit results, evidence inspection, and exports.
+
+### Stage 5: Conversion and deployment
+
+Connect signup, pilot-request forms, error handling, analytics where appropriate, and production deployment configuration.
+
+### Stage 6: Quality assurance
+
+Run tests, check responsive layouts, review all customer-facing copy, and verify end-to-end behavior.
+
+Fix incomplete flows.
+
+---
+
+# PART 12: Final Quality Bar
+
+Before considering the project complete, verify the following.
+
+**Business clarity**
+
+Can a restaurant owner understand what this product does within five seconds of seeing the hero section?
+
+Does the landing page explain a real problem in plain language?
+
+Does the visitor understand what they gain by trying the product?
+
+**Design quality**
+
+Does the website feel like a professionally designed B2B brand?
+
+Is the color palette pleasant and consistent?
+
+Are the animations restrained and useful?
+
+Have all common AI-generated design patterns been avoided?
+
+Are there zero em dashes in user-facing copy?
+
+**Product quality**
+
+Can a visitor explore a useful public sample?
+
+Can a signed-in user upload real documents?
+
+Does document extraction work?
+
+Does the application identify mismatched prices using real calculation logic?
+
+Can the user review uncertain matches?
+
+Can the user inspect supporting evidence?
+
+Are exports based on real data?
+
+**Credibility**
+
+Are all savings presented as potential unless confirmed?
+
+Are sample numbers labeled?
+
+Are there no invented testimonials or customer claims?
+
+Are privacy and security claims backed by actual implementation?
+
+**Conversion**
+
+Does every primary CTA lead somewhere useful?
+
+Can interested businesses sign up or request a pilot?
+
+Are contact forms connected to a working backend?
+
+Is the next step obvious after exploring a sample audit?
+
+**Deployment**
+
+Does the frontend build successfully?
+
+Does the backend start correctly?
+
+Are migrations functional?
+
+Are all required environment variables documented?
+
+Does the complete workflow operate in the deployed environment?
+
+---
+
+# FINAL INSTRUCTION
+
+Build PriceGuard as a **small but genuinely useful, commercially credible product**.
+
+Do not prioritize feature quantity.
+
+Prioritize three things:
+
+1. A beautiful, distinctive, convincing landing page that explains the financial problem and motivates nontechnical businesses to try the product.
+
+2. A working, trustworthy invoice auditing experience that turns supplier documents into clear, evidence-backed financial findings.
+
+3. A conversion flow that helps GTEX attract real hotel and restaurant prospects, earn their trust, and begin paid pilot conversations.
+
+The product should feel calm, reliable, thoughtfully designed, and professionally engineered.
+
+It should not look or sound AI-generated.
+
+It should be something we can confidently demonstrate to a hotel procurement director or restaurant group owner.
+
+**Begin by inspecting the repository, preparing the implementation plan, and then implementing the complete working product. Do not stop after creating only mockups or static screens.**
