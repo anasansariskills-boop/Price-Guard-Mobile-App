@@ -6,3 +6,10 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Local SQLite Database & Uploads
+data/
+*.db
+*.db-wal
+*.db-shm
+private_uploads/
